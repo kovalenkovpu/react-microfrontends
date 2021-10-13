@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: #d8b15c;
+  height: 3rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.authButton {
+  height: 100%;
+}
+
+.logo {
+  width: inherit;
+  height: inherit;
+}
+
+.userName {
+  margin-left: auto;
+  margin-right: 1rem;
+}

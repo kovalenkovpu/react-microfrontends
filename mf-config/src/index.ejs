@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Microfrontends</title>
+  <meta name="importmap-type" content="systemjs-importmap" />
+  <script type="systemjs-importmap" src="./importmap.json"></script>
+  <% if (isLocal) { %>
+  <script type="systemjs-importmap">
+    {
+      "imports": {
+        "@react-mf/mf-config": "//localhost:9000/react-mf-mf-config.js"
+      }
+    }
+  </script>
+  <% } %>
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+  <template id="single-spa-layout">
+    <single-spa-router>
+      <application name="@react-mf/mf-header" loader="header" error="header" props="locale"></application>
+      <main>
+        <route path="/">
+          <application name="@react-mf/mf-main"></application>
+        </route>
+      </main>
+      <application name="@react-mf/mf-footer" loader="footer" error="footer" props="locale"></application>
+    </single-spa-router>
+  </template>
+</head>
+<body>
+  <header id="single-spa-application:@react-mf/mf-header"></header>
+  <main id="single-spa-application:@react-mf/mf-main"></main>
+  <footer id="single-spa-application:@react-mf/mf-footer"></footer>
+  <script>
+    System.import('@react-mf/mf-config');
+  </script>
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+</html>
