@@ -1,3 +1,5 @@
+## WIP
+
 ### Working with the CORS policies during local development
 1. Add proper CORS policies on the server side.
 E.g. AWS S3 bucket working as a static website hosting:
