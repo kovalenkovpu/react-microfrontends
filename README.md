@@ -1,4 +1,14 @@
-## WIP
+# WIP status
+
+## POC of an application based on "microfrontends approach"
+
+### Stack
+ - ReactJS
+ - (single-spa)[https://single-spa.js.org/]
+ - (SystemJS)[https://github.com/systemjs/systemjs]
+ - webpack, babel
+
+### Development approach
 
 ### Working with the CORS policies during local development
 1. Add proper CORS policies on the server side.
