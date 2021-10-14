@@ -1,11 +1,11 @@
 import { merge } from 'webpack-merge';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
+// @ts-ignore
 import singleSpaDefaults from 'webpack-config-single-spa-react-ts';
 // Not sure about this declaration
 import { RuntimeModule } from 'webpack';
 
-module.exports = (webpackConfigEnv: Record<string, unknown>) => {
+const config = (webpackConfigEnv: Record<string, unknown>) => {
   const defaultConfig = singleSpaDefaults({
     orgName: 'react-mf',
     projectName: 'mf-footer',
@@ -60,3 +60,5 @@ module.exports = (webpackConfigEnv: Record<string, unknown>) => {
     ...scssModulesConfig,
   });
 };
+
+export default config;
