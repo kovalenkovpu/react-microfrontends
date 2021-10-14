@@ -3,7 +3,7 @@
     "react": "https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js",
     "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js",
     "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.8.2/lib/system/single-spa.min.js",
-    
+
     "@react-mf/mf-config": "http://www.react-mf.com.s3-website.eu-central-1.amazonaws.com/react-mf-mf-config.js",
     "@react-mf/mf-config/": "http://www.react-mf.com.s3-website.eu-central-1.amazonaws.com/",
     "@react-mf/mf-header": "http://www.mf-header.com.s3-website.eu-central-1.amazonaws.com/react-mf-mf-header.js",
