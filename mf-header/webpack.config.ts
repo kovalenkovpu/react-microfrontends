@@ -1,30 +1,32 @@
-const { merge } = require("webpack-merge");
-const singleSpaDefaults = require("webpack-config-single-spa-react");
+import { merge } from 'webpack-merge';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import singleSpaDefaults from 'webpack-config-single-spa-react-ts';
+// Not sure about this declaration
+import { RuntimeModule } from 'webpack';
 
-module.exports = (webpackConfigEnv) => {
+const config = (webpackConfigEnv: Record<string, unknown>) => {
   const defaultConfig = singleSpaDefaults({
-    orgName: "react-mf",
-    projectName: "mf-header",
+    orgName: 'react-mf',
+    projectName: 'mf-header',
     webpackConfigEnv,
   });
 
-  const standalonePlugin = defaultConfig.plugins.find(
-    (p) => p.constructor.name === "StandaloneSingleSpaPlugin"
+  const standalonePlugin = defaultConfig['plugins'].find(
+    (p: RuntimeModule) => p.constructor.name === 'StandaloneSingleSpaPlugin',
   );
 
   standalonePlugin.options.importMapUrl = new URL(
-    "http://www.react-mf.com.s3-website.eu-central-1.amazonaws.com/importmap.json"
+    'http://www.react-mf.com.s3-website.eu-central-1.amazonaws.com/importmap.json',
   );
 
   const externals = [];
 
   if (webpackConfigEnv.standalone) {
-    externals.push("react", "react-dom");
+    externals.push('react', 'react-dom');
   }
 
-  return merge(defaultConfig, {
-    // customizations go here
-    externals,
+  const scssModulesConfig = {
     module: {
       rules: [
         {
@@ -50,6 +52,13 @@ module.exports = (webpackConfigEnv) => {
           ],
         },
       ],
-    }
+    },
+  };
+
+  return merge(defaultConfig, {
+    externals,
+    ...scssModulesConfig,
   });
 };
+
+export default config;
