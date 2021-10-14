@@ -1,16 +1,21 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { Page } from "../Page";
+import { Page } from '../Page';
 
-import classes from "./Users.module.scss";
+import classes from './Users.module.scss';
+
+interface User {
+  id: number;
+  name: string;
+}
 
 const Users = () => {
-  const [usersData, setUsersData] = React.useState([]);
+  const [usersData, setUsersData] = React.useState<User[]>([]);
 
   React.useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((r) => r.json())
-      .then((users) => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then<User[]>(r => r.json())
+      .then(users => {
         setUsersData(users);
       });
   }, []);
@@ -19,7 +24,7 @@ const Users = () => {
     <Page>
       <h2>Users:</h2>
       <ul>
-        {usersData.map((user) => {
+        {usersData.map(user => {
           const { id, name } = user;
 
           return (

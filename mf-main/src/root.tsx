@@ -1,10 +1,10 @@
-import * as React from "react";
+import * as React from 'react';
 
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
-import { Posts } from "./Posts";
-import { Post } from "./Post";
-import { Users } from "./Users";
+import { Posts } from './Posts';
+import { Post } from './Post';
+import { Users } from './Users';
 
 const Root = () => {
   return (
