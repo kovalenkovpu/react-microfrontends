@@ -6,7 +6,7 @@ const Footer = () => {
   const [postsData, setPostsData] = React.useState([]);
 
   React.useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://jsonplaceholder.typicode.com/posts')
       .then(r => r.json())
       .then(posts => {
         setPostsData(posts);
@@ -21,7 +21,9 @@ const Footer = () => {
           const { id, title } = post;
 
           return (
-            <li className={classes.post} key={id}>{title}</li>
+            <li className={classes.post} key={id}>
+              {title}
+            </li>
           );
         })}
       </ul>
@@ -29,4 +31,4 @@ const Footer = () => {
   );
 };
 
-export { Footer }
+export { Footer };
