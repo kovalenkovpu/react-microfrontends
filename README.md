@@ -7,8 +7,11 @@
  - (single-spa)[https://single-spa.js.org/]
  - (SystemJS)[https://github.com/systemjs/systemjs]
  - webpack, babel
+ - TypeScript
 
 ### Development approach
+1. Run locally all services
+2. Deploy to an environment and run locally only chosen services
 
 ### Working with the CORS policies during local development
 1. Add proper CORS policies on the server side.
