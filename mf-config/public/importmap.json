@@ -10,7 +10,7 @@
     "@react-mf/mf-header/": "http://www.mf-header.com.s3-website.eu-central-1.amazonaws.com/",
     "@react-mf/mf-footer": "http://www.mf-footer.com.s3-website.eu-central-1.amazonaws.com/react-mf-mf-footer.js",
     "@react-mf/mf-footer/": "http://www.mf-footer.com.s3-website.eu-central-1.amazonaws.com/",
-    "@react-mf/mf-main": "http://www.mf-footer.com.s3-website.eu-central-1.amazonaws.com/react-mf-mf-main.js",
-    "@react-mf/mf-main/": "http://www.mf-footer.com.s3-website.eu-central-1.amazonaws.com/"
+    "@react-mf/mf-main": "http://www.mf-main.com.s3-website.eu-central-1.amazonaws.com/react-mf-mf-main.js",
+    "@react-mf/mf-main/": "http://www.mf-main.com.s3-website.eu-central-1.amazonaws.com/"
   }
 }
